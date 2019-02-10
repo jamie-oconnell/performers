@@ -1,14 +1,193 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: 'Work Sans', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
+  font-weight: normal;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+* {
+  box-sizing: border-box;
+}
+
+.tags {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.tag {
+  background-color: #000;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  display: inline-block;
+  margin: 0 5px 5px 0;
+  height: 25px;
+  flex-shrink: 0;
+}
+
+.App {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  /* display: flex; */
+}
+
+.featured {
+  padding: 30px;
+  width: 30%;
+  /* background-color: white;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23); */
+  z-index: 10;
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.featured .heading {
+  display: flex;
+  color: #fff;
+}
+
+.mapboxgl-marker{
+  cursor: pointer;
+}
+
+.featured .heading h1 {
+  flex: 1;
+  margin-top: 0;
+}
+
+.event {
+  display: flex;
+  width: 100%;
+  position: relative;
+  height: 200px;
+  margin-bottom: 20px;
+  background-color: white;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  transition: flex 250ms ease-in-out 0ms;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+  opacity: 0;
+}
+
+.imageContainer {
+  width: 40%;
+}
+
+.close {
+  background: #fff;
+  border-radius: 50%;
+  padding: 10px;
+  color: #000;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-left: -50px;
+  cursor: pointer;
+}
+
+.button {
+  background: #bc4e9c;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #f80759, #bc4e9c);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #f80759, #bc4e9c);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  border: none;
+  width: auto;
+  padding: 5px 10px;
+  border-radius: 15px;
+  color: #fff;
+  margin: 0 5px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.button-hollow {
+  border: 1px solid rgba(0, 0, 0, 0.23);
+  width: auto;
+  padding: 5px 10px;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.imageContainer img {
+  object-fit: cover;
+  object-position: center;
+  height: 100%;
+  width: 100%;
+}
+
+.social-link {
+  color: #bc4e9c;
+  display: inline;
+  margin-right: 5px;
+}
+
+.event .content {
+  flex: 1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.event .content h2 {
+  margin: 5px 0;
+}
+
+.mapboxgl-popup-content {
+  padding: 0 !important;
+}
+
+.mapboxgl-user-location-dot {
+  background: linear-gradient(to right, #f80759, #bc4e9c);
+}
+
+.mapboxgl-user-location-dot::before {
+  background: linear-gradient(to right, #f80759, #bc4e9c);
+}
+
+.tag .mdi {
+  margin-right: 5px;
+}
+
+@media only screen and (max-width: 1366px) {
+  .featured {
+    display: none;
+  }
+}
+
+.buttons {
+  margin-top: 20px;
+}
+
+.content .description {
+  word-wrap: break-word;
+  flex: 1;
+  white-space: pre-line;
+  overflow: auto;
+}
+
+.event.big {
+  flex-direction: column-reverse;
+  flex: 1;
+  min-height: 300px;
+  cursor: auto;
+}
+
+.event.big .imageContainer {
+  width: 100%;
+  height: 40%;
 }
